@@ -1,34 +1,41 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import "primeicons/primeicons.css";
 import "./App.css";
+import React from "react";
+import { Button } from "primereact/button";
+import "primereact/resources/themes/viva-dark/theme.css";
+import { PrimeReactProvider, PrimeReactContext } from "primereact/api";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+    <PrimeReactProvider value={{ unstyled: true }}>
+      <Nav />
+    </PrimeReactProvider>
+  );
+}
+
+function Nav() {
+  return (
+    <nav className="nav p-4 gap-2 flex items-center justify-between">
+      <div className="logo">
+        <a
+          href="#"
+          className="capitalize text-3xl text-[#ffffff98] font-bold  tracking-wide"
+        >
+          <span>dera</span>
         </a>
       </div>
-      <h1 className=" text-5xl bold">Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs text-2xl text-blue-500">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <ul className="flex space-x-4">
+        <li>
+          <Button label="Projects" className="nav-links" text raised />
+        </li>
+        <li>
+          <Button label="About" className="nav-links" text raised />
+        </li>
+        <li>
+          <Button label="Contact" className="nav-links" text raised />
+        </li>
+      </ul>
+    </nav>
   );
 }
 
