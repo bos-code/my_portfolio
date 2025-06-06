@@ -10,7 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "@tailwindcss/postcss": "^4.1.8",
+    "daisyui": "^5.0.43",
+    "gsap": "^3.13.0",
     "postcss": "^8.5.4",
     "primeicons": "^7.0.0",
     "primereact": "^10.9.6",

@@ -1,26 +1,64 @@
 @import "tailwindcss";
-
-body {
-  @apply bg-[#0C0C0C] font-sans;
-}
+@plugin "daisyui";
 
 .nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 60%;
+  /* justify-content: ; */
+
   border-radius: 100rem;
   margin: 1rem auto 0;
   background-color: transparent;
   border-width: 1.6px;
   border-color: rgba(255, 255, 255, 0.1);
-  @apply px-16 py-2;
+  @apply px-16 py-2 w-11/12 md:w-3/4;
 }
 
 .nav-links {
   @apply text-2xl p-3;
 }
 
-.p-button {
+button.nav-links {
   @apply text-[#ffffff99] hover:text-white transition-colors py-2 duration-200;
+}
+.glass {
+  background: rgba(255, 255, 255, 0.05); /* subtle white tint */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* for Safari */
+  border: 1px solid rgba(255, 215, 0, 0.2); /* gold accent border */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+}
+
+.contact {
+  @apply bg-gradient-to-b 
+    from-[rgb(120,120,120)] 
+    to-[rgb(10,10,10)] 
+    rounded-[100px] 
+    opacity-100 
+    will-change-transform
+
+    flex 
+    flex-row 
+    flex-nowrap 
+    items-center 
+    justify-center 
+    gap-2.5 
+    cursor-pointer 
+    overflow-hidden 
+ 
+    capitalize
+    transition 
+    duration-300 
+    hover:scale-105;
+  background-size: 400%;
+  transition-property: transform, background-position;
+}
+.contact:hover {
+  background-position: 100%;
+  /* Optional: animate gradient movement */
+  transition: transform 0.3s, background-position 0.3s;
+}
+.btn {
+  @apply btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl;
 }

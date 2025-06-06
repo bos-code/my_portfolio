@@ -1,42 +1,135 @@
 import "primeicons/primeicons.css";
+
+import { useEffect, useRef, useLayoutEffect } from "react";
+import { gsap } from "gsap";
 import "./App.css";
-import React from "react";
-import { Button } from "primereact/button";
-import "primereact/resources/themes/viva-dark/theme.css";
+import "primereact/resources/themes/lara-dark-indigo/theme.css"; // or any theme you prefer
+import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";
 import { PrimeReactProvider, PrimeReactContext } from "primereact/api";
+import { Nav } from "./Nav";
+import { Hero } from "./Hero";
 
 function App() {
   return (
     <PrimeReactProvider value={{ unstyled: true }}>
       <Nav />
+      <Hero />
     </PrimeReactProvider>
   );
 }
 
-function Nav() {
+export function NameAnimation() {
+  const nameRef = useRef();
+  const nameText = "John Dera";
+
+  useEffect(() => {
+    const type = () => {
+      const el = nameRef.current;
+      el.innerHTML = nameText
+        .split("")
+        .map((char) => `<span>${char}</span>`)
+        .join("");
+
+      const spans = el.querySelectorAll("span");
+
+      gsap.set(spans, { opacity: 0, y: 9 });
+      const tl = gsap.timeline();
+
+      tl.to(spans, {
+        opacity: 1,
+        y: 0,
+        duration: 0.2,
+        stagger: 0.09,
+        ease: "ease",
+      });
+    };
+
+    type(); // run initially
+
+    const interval = setInterval(() => {
+      type();
+    }, 10000); // repeat every 5 seconds
+
+    return () => clearInterval(interval); // cleanup
+  }, []);
+
   return (
-    <nav className="nav p-4 gap-2 flex items-center justify-between">
-      <div className="logo">
-        <a
-          href="#"
-          className="capitalize text-3xl text-[#ffffff98] font-bold  tracking-wide"
-        >
-          <span>dera</span>
-        </a>
-      </div>
-      <ul className="flex space-x-4">
-        <li>
-          <Button label="Projects" className="nav-links" text raised />
-        </li>
-        <li>
-          <Button label="About" className="nav-links" text raised />
-        </li>
-        <li>
-          <Button label="Contact" className="nav-links" text raised />
-        </li>
-      </ul>
-    </nav>
+    <h1 className="text-5xl  font-bold">
+      Hello, I'm{" "}
+      <span
+        ref={nameRef}
+        className="text-8xl font-extrabold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent"
+      >
+        {nameText}
+      </span>
+    </h1>
   );
 }
+
+export function ChipDemo() {
+  return (
+    <div className="badge p-5 rounded-full text-xl capitalize badge-ghost">
+      frontEnd developer
+    </div>
+  );
+}
+
+export const FloatingCards = () => {
+  const cardTexts = [
+    "A card component has a figure, a body part, and inside body there are title and actions parts",
+    "React makes UI development fun and efficient.",
+    "React makes UI development fun and efficient.",
+    "React makes UI development fun and efficient.",
+    "GSAP enables smooth, performant animations.",
+    "GSAP enables smooth, performant animations.",
+  ];
+  const containerRef = useRef();
+  const cardRefs = useRef([]);
+
+  useLayoutEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+    const containerRect = container.getBoundingClientRect();
+
+    // Only animate cards that are mounted
+    cardRefs.current.filter(Boolean).forEach((card) => {
+      const float = () => {
+        const cardRect = card.getBoundingClientRect();
+        const maxX = containerRect.width - cardRect.width;
+        const maxY = containerRect.height - cardRect.height;
+
+        gsap.to(card, {
+          x: gsap.utils.random(0, maxX),
+          y: gsap.utils.random(0, maxY),
+          duration: gsap.utils.random(6, 10),
+          ease: "back",
+          onComplete: float,
+        });
+      };
+
+      float();
+    });
+  }, [cardTexts.length]);
+
+  return (
+    <div
+      ref={containerRef}
+      className="boxes p-10 relative  w-full h-full overflow-hidden"
+    >
+      {cardTexts.map((text, i) => (
+        <div
+          key={i}
+          ref={(el) => (cardRefs.current[i] = el)}
+          className="card absolute p-4 w-[15rem] bg-base-100 card-xs shadow-xl"
+        >
+          <div className="card-body">
+            <p>{text}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
 
 export default App;
