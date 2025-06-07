@@ -115,7 +115,7 @@ export const FloatingCards = () => {
   return (
     <div
       ref={containerRef}
-      className="boxes p-10 relative  w-full h-full overflow-hidden"
+      className="boxes p-6 relative  w-full h-full overflow-hidden"
     >
       {cardTexts.map((text, i) => (
         <div
@@ -123,7 +123,7 @@ export const FloatingCards = () => {
           ref={(el) => (cardRefs.current[i] = el)}
           className="card absolute p-4 w-[15rem] bg-base-100 card-xs shadow-xl"
         >
-          <div className="card-body">
+          <div className="card-body text-lg">
             <p>{text}</p>
           </div>
         </div>

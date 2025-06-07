@@ -7,7 +7,7 @@ export function Hero() {
         <ChipDemo />
 
         <NameAnimation />
-        <p className="text-lg">
+        <p className="text-2xl">
           A passionate front-end developer skilled in React, JavaScript, and
           modern web technologies. I love building responsive, user-friendly
           interfaces and always enjoy learning new things.
