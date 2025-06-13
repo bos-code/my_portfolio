@@ -1,6 +1,6 @@
 import "primeicons/primeicons.css";
 
-import { useEffect, useRef, useLayoutEffect } from "react";
+import { useEffect, useRef, useLayoutEffect, Children } from "react";
 import { gsap } from "gsap";
 import "./App.css";
 import "primereact/resources/themes/lara-dark-indigo/theme.css"; // or any theme you prefer
@@ -9,13 +9,23 @@ import "primeicons/primeicons.css";
 import { PrimeReactProvider, PrimeReactContext } from "primereact/api";
 import { Nav } from "./Nav";
 import { Hero } from "./Hero";
+import { ScreenshotViewer } from "./ScreenshotViewer";
 
 function App() {
   return (
     <PrimeReactProvider value={{ unstyled: true }}>
       <Nav />
       <Hero />
+      <MainComponent />
     </PrimeReactProvider>
+  );
+}
+
+function MainComponent() {
+  return (
+    <div className="mx-20 mt-40">
+      <ScreenshotViewer />
+    </div>
   );
 }
 
@@ -45,21 +55,21 @@ export function NameAnimation() {
       });
     };
 
-    type(); // run initially
+    type();
 
     const interval = setInterval(() => {
       type();
-    }, 10000); // repeat every 5 seconds
+    }, 10000);
 
     return () => clearInterval(interval); // cleanup
   }, []);
 
   return (
-    <h1 className="text-5xl  font-bold">
+    <h1 className="text-4xl  font-bold">
       Hello, I'm{" "}
       <span
         ref={nameRef}
-        className="text-8xl font-extrabold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent"
+        className="aniName text-6xl font-extrabold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent"
       >
         {nameText}
       </span>
@@ -67,10 +77,10 @@ export function NameAnimation() {
   );
 }
 
-export function ChipDemo() {
+export function ChipDemo({ children }) {
   return (
     <div className="badge p-5 rounded-full text-xl capitalize badge-ghost">
-      frontEnd developer
+      {children || "frontEnd developer"}
     </div>
   );
 }

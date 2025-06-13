@@ -1,5 +1,6 @@
 import { Button } from "primereact/button";
 import React from "react";
+import logo from "./assets/favicon.png";
 import SizeDemo from "./HeadlessDemo";
 export function Nav() {
   return (
@@ -7,8 +8,9 @@ export function Nav() {
       <div className="logo">
         <a
           href="#"
-          className="capitalize text-3xl text-[#ffffff98] font-bold  tracking-wide"
+          className=" items-start justify-center capitalize flex  text-3xl text-[#ffffff98] font-bold  tracking-wide"
         >
+          <img src={logo} alt="logo" className="w-10 h-10 inline-block mr-2" />
           <span>dera</span>
         </a>
       </div>

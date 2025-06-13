@@ -19,7 +19,7 @@ export function Hero() {
             onClick={() => {
               const link = document.createElement("a");
               link.href = "/Chidera_Okonkwo_Resume.pdf";
-              link.download = "Chidera_Okonkwo_Resume.pdf";
+              link.download = "/Chidera_Okonkwo_Resume.pdf";
               document.body.appendChild(link);
               link.click();
               document.body.removeChild(link);
