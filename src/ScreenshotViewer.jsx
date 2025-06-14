@@ -13,6 +13,7 @@ function GridDisplay({ list }) {
           >
             <figure className="screenshot-figure">
               <img src={item} alt={`Screenshot ${index + 1}`} />
+              {console.log(item.list)}
             </figure>
           </li>
         ))}
@@ -24,6 +25,7 @@ export const ScreenshotViewer = () => {
   // Use a static array of URLs
   const [screenshotUrls, setScreenshotUrls] = useState([]);
   useEffect(() => {
+    const accessKey = "nwY9_ERN1iXVpw"; // reusable key
     const urls = [
       "https://www.example.com",
       "https://www.wikipedia.org",
@@ -33,9 +35,14 @@ export const ScreenshotViewer = () => {
 
     const generatedUrls = urls.map((url) => {
       const encodedUrl = encodeURIComponent(url);
-      return `https://api.screenshotone.com/take?access_key=DO2afWp9D4JOjQ&url=${encodedUrl}`;
+      return `https://api.screenshotone.com/take?access_key=${accessKey}&url=${encodedUrl}`;
     });
     setScreenshotUrls(generatedUrls);
+
+    // Cleanup function
+    return () => {
+      setScreenshotUrls([]);
+    };
   }, []); // Empty dependency array, runs once after initial render
 
   return <GridDisplay list={screenshotUrls} />;

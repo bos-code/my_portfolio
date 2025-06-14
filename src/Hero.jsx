@@ -13,21 +13,16 @@ export function Hero() {
           interfaces and always enjoy learning new things.
         </p>
         <div className="btns mt-5 flex gap-4">
-          <button
-            className="btn   transform active:scale-[.8] rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold flex items-center gap-2 shadow-lg hover:scale-105 transition-transform"
+          <a
+            className="btn transform active:scale-[.8] rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold flex items-center gap-2 shadow-lg hover:scale-105 transition-transform"
+            href="/mypdf.pdf"
+            download="Chidera_Okonkwo_Resume.pdf"
+            target="_blank"
             style={{ border: "none" }}
-            onClick={() => {
-              const link = document.createElement("a");
-              link.href = "/Chidera_Okonkwo_Resume.pdf";
-              link.download = "/Chidera_Okonkwo_Resume.pdf";
-              document.body.appendChild(link);
-              link.click();
-              document.body.removeChild(link);
-            }}
           >
             <i className="pi pi-download"></i>
             Download CV
-          </button>
+          </a>
           <button className="btn  contact">contact me</button>
         </div>
       </div>
