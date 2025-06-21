@@ -9,7 +9,10 @@ import "primeicons/primeicons.css";
 import { PrimeReactProvider, PrimeReactContext } from "primereact/api";
 import { Nav } from "./Nav";
 import { Hero } from "./Hero";
+
 import { ScreenshotViewer } from "./ScreenshotViewer";
+import { AboutMe } from "./AboutMe.1";
+import { Footer } from "./Footer";
 
 function App() {
   return (
@@ -17,6 +20,7 @@ function App() {
       <Nav />
       <Hero />
       <MainComponent />
+      <Footer />
     </PrimeReactProvider>
   );
 }
@@ -25,13 +29,16 @@ function MainComponent() {
   return (
     <div className="mx-20 mt-40">
       <ScreenshotViewer />
+      {/* <StackIcons/> */}
+
+      <AboutMe />
     </div>
   );
 }
 
-export function NameAnimation() {
+export function NameAnimation({ children, text = "" }) {
   const nameRef = useRef();
-  const nameText = "John Dera";
+  const nameText = children || text || "John Dera";
 
   useEffect(() => {
     const type = () => {
@@ -62,14 +69,14 @@ export function NameAnimation() {
     }, 10000);
 
     return () => clearInterval(interval); // cleanup
-  }, []);
+  }, [nameText]);
 
   return (
-    <h1 className="text-4xl  font-bold">
-      Hello, I'm{" "}
+    <h1 className={`text-4xl font-bold `}>
+      {text ? text : "Hello, I'm"}{" "}
       <span
         ref={nameRef}
-        className="aniName text-6xl font-extrabold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent"
+        className="aniName text-6xl font-extrabold bg-gradient-to-r from-purple-500 to-pink-500 pl-2 bg-clip-text text-transparent"
       >
         {nameText}
       </span>
