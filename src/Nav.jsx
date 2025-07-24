@@ -4,7 +4,7 @@ import logo from "./assets/favicon.png";
 import SizeDemo from "./HeadlessDemo";
 export function Nav() {
   return (
-    <nav className="nav p-4 gap-2 flex items-center justify-between">
+    <nav className="nav py-4 px-2 md:px-4 gap-2 flex items-center justify-between">
       <div className="logo">
         <a
           href="#"
@@ -14,7 +14,7 @@ export function Nav() {
           <span>dera</span>
         </a>
       </div>
-      <ul className="md:flex space-x-4 hidden ">
+      <ul className="md:flex space-x-4  hidden ">
         <li>
           <Button label="Projects" className="nav-links" text raised />
         </li>

@@ -21,7 +21,7 @@ export function AboutMe() {
         </p>
       </div>
       <div className="content flex  flex-col md:flex-row items-center justify-center gap-6 p-6">
-        <div className="card profile-card bg-base-200 shadow-4xl  flex flex-col items-start justify-center gap-4 ">
+        <div className="card-xs md:card profile-card bg-base-200 shadow-4xl  flex flex-col items-start justify-center gap-4 ">
           <figure className="w-full relative h-[500px] object-top bg-blue-100  rounded-2xl overflow-hidden flex items-center justify-center">
             <img
               loading="lazy"
@@ -87,9 +87,9 @@ export function AboutMe() {
             <button className="btn  contact ">contact me</button>
           </div>
         </div>
-        <div className="card flex-1 stack card-bordered bg-base-100 shadow-2xl">
-          <div className="card-body">
-            <p className="text-2xl font-bold text-center">
+        <div className="card-sm flex-1 stack card-bordered bg-base-100  md:shadow-2xl">
+          <div className="card-body p-0 md:p-6 flex flex-col items-center justify-center gap-4">
+            <p className="text-xl font-bold text-center">
               I am a passionate frontend developer with a keen interest in
               creating beautiful and functional web applications. I love
               exploring new technologies and continuously improving my skills.
@@ -103,9 +103,11 @@ export function AboutMe() {
 
             <StackIcons />
             <div className=" divider divide-accent"></div>
-                <h2 className="text-4xl font-bold flex text-center justify-center item-center pb-3 px-4 capitalize"> rate me</h2>
-            <StarRating onRate = '10'/>
-
+            <h2 className="text-xl  md:text-4xl font-bold flex text-center justify-center item-center pb-3 px-4 capitalize">
+              {" "}
+              rate me
+            </h2>
+            <StarRating onRate="5" />
           </div>
         </div>
       </div>

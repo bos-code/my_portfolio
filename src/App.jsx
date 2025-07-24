@@ -27,7 +27,7 @@ function App() {
 
 function MainComponent() {
   return (
-    <div className="mx-20 mt-40">
+    <div className="mx-5 xs:mx-2 lg:mx-10 xl:mx-20 mt-40">
       <ScreenshotViewer />
       {/* <StackIcons/> */}
 
@@ -72,11 +72,11 @@ export function NameAnimation({ children, text = "" }) {
   }, [nameText]);
 
   return (
-    <h1 className={`text-4xl font-bold `}>
+    <h1 className={`text-2xl md:text-3xl lg:text-4xl  font-bold `}>
       {text ? text : "Hello, I'm"}{" "}
       <span
         ref={nameRef}
-        className="aniName text-6xl font-extrabold bg-gradient-to-r from-purple-500 to-pink-500 pl-2 bg-clip-text text-transparent"
+        className="aniName text-4xl lg:text-6xl font-extrabold bg-gradient-to-r from-purple-500 to-pink-500 pl-2 bg-clip-text text-transparent"
       >
         {nameText}
       </span>
@@ -86,7 +86,7 @@ export function NameAnimation({ children, text = "" }) {
 
 export function ChipDemo({ children }) {
   return (
-    <div className="badge p-5 rounded-full text-xl capitalize badge-ghost">
+    <div className="badge p-5 flex justify-center whitespace-nowrap py-6 px-10  items-center  w-full md:w-auto rounded-full text-xl capitalize badge-ghost">
       {children || "frontEnd developer"}
     </div>
   );
@@ -132,7 +132,7 @@ export const FloatingCards = () => {
   return (
     <div
       ref={containerRef}
-      className="boxes p-6 relative  w-full h-full overflow-hidden"
+      className="boxes p-6 relative  w-full h-full overflow-hidden hidden lg:block"
     >
       {cardTexts.map((text, i) => (
         <div

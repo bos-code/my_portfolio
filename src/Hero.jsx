@@ -3,11 +3,11 @@ import { ChipDemo, NameAnimation, FloatingCards } from "./App";
 export function Hero() {
   return (
     <div className="hero--wrapper  mt-20">
-      <div className="textbox">
+      <div className="textbox   flex items-center justify-center">
         <ChipDemo />
 
         <NameAnimation />
-        <p className="text-2xl">
+        <p className= "  xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl  font-semibold mt-3">
           A passionate front-end developer skilled in React, JavaScript, and
           modern web technologies. I love building responsive, user-friendly
           interfaces and always enjoy learning new things.
@@ -27,7 +27,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className=" flex justify-center items-center">
+      <div className="  justify-center items-center hidden md:flex">
         <FloatingCards />
       </div>
     </div>

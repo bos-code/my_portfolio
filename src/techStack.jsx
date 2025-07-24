@@ -72,7 +72,7 @@ export default function BiDirectionalStack() {
               key={`icon-${tech}-${i}`}
               onMouseEnter={pauseAll}
               onMouseLeave={resumeAll}
-              className="flex-none min-w-[80px] h-[80px] flex items-center justify-center  bg-gray-800 rounded-lg shadow  transition duration-300"
+              className="flex-none min-w-[60px] h-[60px] md:min-w-[80px] md:h-[80px] flex items-center justify-center  bg-gray-800 rounded-lg shadow  transition duration-300"
             >
               <i className={`devicon-${tech}-plain colored text-4xl`} title={tech}></i>
             </div>

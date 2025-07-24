@@ -13,7 +13,7 @@ const starContainerStyle = {
 };
 
 export default function StarRating({
-  maxRating = 10,
+  maxRating = 5,
   color = "var(--color-accent)",
   size = "64",
   className = "",
@@ -49,7 +49,7 @@ export default function StarRating({
     
 
       {rating > 0 && (
-        <p className="text-3xl text-gray-500" >
+        <p className="text-xl md:text-2xl lg:text-3xl text-gray-500" >
           Thank you for rating this {rating} star{rating > 1 ? "s" : ""}!
         </p>
       )}

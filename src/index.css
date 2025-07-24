@@ -11,7 +11,7 @@
   background-color: transparent;
   border-width: 1.6px;
   border-color: rgba(255, 255, 255, 0.1);
-  @apply px-16 py-2 w-11/12 md:w-3/4;
+  @apply md:px-16 py-2 w-11/12 md:w-3/4;
 }
 
 .nav-links {
@@ -22,7 +22,7 @@ button.nav-links {
   @apply text-[#ffffff99] hover:text-white transition-colors py-2 duration-200;
 }
 .glass {
-  background: rgba(255, 255, 255, 0.05); /* subtle white tint */
+  background-color: var(--color-accent); /* subtle white tint */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px); /* for Safari */
   border: 1px solid rgba(255, 215, 0, 0.2); /* gold accent border */
@@ -37,15 +37,18 @@ button.nav-links {
     rounded-[100px] 
     opacity-100 
     will-change-transform
+     btn-xl sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl
 
     flex 
     flex-row 
     flex-nowrap 
     items-center 
     justify-center 
-    gap-2.5 
+ 
     cursor-pointer 
     overflow-hidden 
+    px-6
+    py-5
  
     capitalize
     transition 
@@ -60,5 +63,5 @@ button.nav-links {
   transition: transform 0.3s, background-position 0.3s;
 }
 .btn {
-  @apply btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl;
+  @apply btn-md sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl;
 }

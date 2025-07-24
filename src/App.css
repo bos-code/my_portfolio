@@ -92,7 +92,7 @@ header h1 .aniName {
 }
 
 .hero--wrapper {
-  @apply grid grid-cols-2 mx-30 gap-10;
+  @apply grid -mb-20 md:-mb-0 grid-cols-1 lg:grid-cols-2 px-4 mx-0 md:mx-10 lg:mx-20 xl:mx-30  gap-10;
 }
 
 .textbox {
@@ -100,8 +100,9 @@ header h1 .aniName {
 }
 
 .textbox p {
-  width: 80%;
-  text-align: left;
+  /* width: 80%;
+  text-align: left; */
+  @apply w-full text-center  md:text-left md:w-5/6;
 }
 
 .span-1 {
@@ -162,8 +163,8 @@ header h1 .aniName {
 
 
 .profile-card{
-  @apply flex-2/5 border-2 border-[#ac99a509] rounded-2xl  p-10;
+  @apply flex-2/5 border-2 border-[#ac99a509] rounded-2xl  px-20 py-10 md:px-10 md:py-5 lg:px-20 lg:py-10 ;
 }
 .stack{
-  @apply flex-3/5 p-10
+  @apply flex-3/5 p-0 md:p-6 lg:p-10 ;
 }

@@ -17,12 +17,12 @@ function GridDisplay({ list }) {
   };
 
   return (
-    <div className="">
-      <ul className="grid grid-cols-2 grid-rows-3   h-[100vh] gap-5">
+    <div className="-mt-10">
+      <ul className=" flex flex-col h-full md:grid md:grid-rows-3   md:h-[100vh] gap-5">
         {list.map((item, index) => (
           <li
             key={index}
-            className={`shotlist shadow-xl w-full p-3 bg-[#111111a9] works span-${
+            className={`shotlist shadow-xl h-72 md:h-auto w-full p-3 bg-[#111111a9] works span-${
               index + 1
             }`}
           >
