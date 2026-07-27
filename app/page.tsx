@@ -28,7 +28,7 @@ export default function Home() {
       <header className="shell nav">
         <a className="brand" href="#top">john<span>dera</span>.</a>
         <nav className="nav-links mono" aria-label="Primary navigation">
-          <a href="#work">Work</a>
+          <a href="/work">Work</a>
           <a href="#capabilities">Capabilities</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
@@ -43,7 +43,7 @@ export default function Home() {
           <p className="hero-copy">I’m Chidera Okonkwo. I turn ambitious product ideas and detailed interfaces into responsive, reliable frontend systems.</p>
           <div className="hero-actions">
             <a className="button" href="#work">Explore selected work <ArrowDownRight size={17} /></a>
-            <a className="button secondary" href="https://github.com/bos-code" target="_blank" rel="noreferrer">GitHub profile <ArrowUpRight size={17} /></a>
+            <a className="button secondary" href="/work">View all products <ArrowUpRight size={17} /></a>
           </div>
         </div>
         <aside className="hero-side" aria-label="Portfolio introduction visual">
@@ -63,11 +63,14 @@ export default function Home() {
             <div className="mono eyebrow">01 / Selected work</div>
             <div>
               <h2>Products with real <span className="serif">depth.</span></h2>
-              <p>A selection of platforms and interface engineering work spanning education, hospitality, content management, mobile tickets and business operations.</p>
+              <p>A selection of substantial platforms and interface engineering work spanning education, personal finance, hospitality, mobile tickets and business operations.</p>
             </div>
           </div>
           <div className="featured-list">
             {featuredProjects.map((project, index) => <ProjectCard project={project} index={index} key={project.title} />)}
+          </div>
+          <div className="hero-actions">
+            <a className="button secondary" href="/work">Explore the complete project index <ArrowUpRight size={17} /></a>
           </div>
         </div>
       </section>
@@ -94,17 +97,20 @@ export default function Home() {
       <section className="section">
         <div className="shell">
           <div className="section-head">
-            <div className="mono eyebrow">03 / Archive</div>
-            <h2>More work,<br/><span className="serif">less noise.</span></h2>
+            <div className="mono eyebrow">03 / More products</div>
+            <div>
+              <h2>Every project gets<br/><span className="serif">its own context.</span></h2>
+              <p>These entries now open internal pages explaining what each product does, its current status, the implementation approach and the relevant public or live links.</p>
+            </div>
           </div>
           <table className="archive">
             <tbody>
               {archive.map((project) => (
                 <tr key={project.title}>
-                  <td>{project.title}</td>
+                  <td><a href={`/work/${project.slug}`}>{project.title}</a></td>
                   <td>{project.category}</td>
-                  <td className="mono">{project.year}</td>
-                  <td>{project.repoUrl && <a href={project.repoUrl} target="_blank" rel="noreferrer" aria-label={`Open ${project.title}`}><ArrowUpRight size={20}/></a>}</td>
+                  <td className="mono">{project.status ?? project.year}</td>
+                  <td><a href={`/work/${project.slug}`} aria-label={`Read ${project.title} case study`}><ArrowUpRight size={20}/></a></td>
                 </tr>
               ))}
             </tbody>
