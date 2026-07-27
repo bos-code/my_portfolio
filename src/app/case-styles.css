@@ -1,0 +1,24 @@
+.case-study { min-height: 100vh; }
+.case-nav { min-height: 86px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+.back-link { display: inline-flex; align-items: center; gap: 8px; }
+.case-hero { padding: 90px 0 56px; }
+.case-hero h1 { margin: 20px 0 40px; font-size: clamp(62px, 11vw, 170px); line-height: .82; letter-spacing: -.085em; }
+.case-intro { display: grid; grid-template-columns: 1.2fr .8fr; gap: 50px; border-top: 1px solid var(--line); padding-top: 30px; }
+.case-intro p { color: var(--muted); font-size: clamp(16px, 1.4vw, 21px); line-height: 1.7; }
+.case-visual { min-height: 560px; border: 1px solid var(--line); display: grid; place-items: center; overflow: hidden; position: relative; background: linear-gradient(135deg, rgba(238,58,67,.18), rgba(90,121,255,.18)), #0d0d0d; }
+.case-visual::before { content: ''; position: absolute; width: 54%; aspect-ratio: 1; border: 1px solid rgba(255,255,255,.17); transform: rotate(24deg); background: linear-gradient(135deg, rgba(238,58,67,.36), rgba(90,121,255,.3)); box-shadow: 0 0 120px rgba(90,121,255,.15); }
+.case-visual span { position: relative; z-index: 1; font-size: clamp(14px, 2vw, 24px); }
+.case-details { padding: 120px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+.case-details article { border-top: 1px solid var(--line); padding-top: 28px; }
+.case-details h2, .case-highlights h2 { font-size: clamp(38px, 5vw, 72px); letter-spacing: -.055em; line-height: .96; }
+.case-details p { color: var(--muted); line-height: 1.8; font-size: 17px; }
+.case-highlights { border-top: 1px solid var(--line); padding: 120px 0; display: grid; grid-template-columns: .8fr 1.2fr; gap: 64px; }
+.case-highlights ol { list-style: none; margin: 0; padding: 0; }
+.case-highlights li { display: grid; grid-template-columns: 70px 1fr; gap: 20px; padding: 25px 0; border-top: 1px solid var(--line); }
+.case-highlights strong { font-size: clamp(22px, 3vw, 40px); letter-spacing: -.04em; }
+.case-footer { padding: 60px 0 110px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 30px; align-items: flex-end; flex-wrap: wrap; }
+@media (max-width: 800px) {
+  .case-intro, .case-details, .case-highlights { grid-template-columns: 1fr; }
+  .case-visual { min-height: 360px; }
+  .case-details, .case-highlights { padding: 80px 0; }
+}
