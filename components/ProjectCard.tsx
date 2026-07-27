@@ -6,7 +6,10 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
     <article className="featured-card">
       <div className="featured-info">
         <div>
-          <div className="mono eyebrow">{String(index + 1).padStart(2, '0')} / {project.category}</div>
+          <div className="project-meta-row">
+            <div className="mono eyebrow">{String(index + 1).padStart(2, '0')} / {project.category}</div>
+            {project.status && <span className="project-status mono">{project.status}</span>}
+          </div>
           <h3><a href={`/work/${project.slug}`}>{project.title}</a></h3>
           <p>{project.summary}</p>
           <div className="tags">
