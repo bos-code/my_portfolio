@@ -1,0 +1,38 @@
+.page { min-height: 100vh; }
+.hero { padding: 110px 0 72px; border-bottom: 1px solid var(--line); }
+.hero h1 { margin: 18px 0 32px; max-width: 1150px; font-size: clamp(70px, 11vw, 170px); line-height: .82; letter-spacing: -.085em; }
+.hero p { max-width: 760px; color: var(--muted); font-size: clamp(18px, 2vw, 28px); line-height: 1.55; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); border-left: 1px solid var(--line); border-top: 1px solid var(--line); }
+.stat { min-height: 190px; padding: 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); display: flex; flex-direction: column; justify-content: space-between; background: var(--panel); }
+.stat strong { font-size: clamp(38px, 5vw, 76px); letter-spacing: -.065em; }
+.section { padding: 110px 0; border-top: 1px solid var(--line); }
+.heading { display: grid; grid-template-columns: .35fr 1fr; gap: 40px; margin-bottom: 52px; }
+.heading h2 { margin: 0; max-width: 900px; font-size: clamp(48px, 7vw, 104px); line-height: .9; letter-spacing: -.07em; }
+.chartFrame, .trophyFrame { padding: clamp(20px, 4vw, 48px); border: 1px solid var(--line); background: var(--panel); overflow: hidden; }
+.chartFrame img, .trophyFrame img { display: block; width: 100%; height: auto; }
+.chartFrame img { min-width: 780px; }
+.scroll { overflow-x: auto; }
+.achievements { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; padding: 1px; background: var(--line); }
+.achievement { min-height: 220px; padding: 34px; background: var(--panel); display: flex; flex-direction: column; justify-content: space-between; }
+.achievement strong { font-size: clamp(28px, 4vw, 50px); line-height: 1; letter-spacing: -.05em; }
+.achievement p { margin: 20px 0 0; color: var(--muted); line-height: 1.6; }
+.repos { display: grid; gap: 1px; background: var(--line); padding: 1px; }
+.repo { padding: 28px; background: var(--panel); display: grid; grid-template-columns: 1fr .7fr auto; gap: 24px; align-items: center; }
+.repo strong { font-size: clamp(24px, 3vw, 42px); letter-spacing: -.045em; }
+.repo span { color: var(--muted); }
+
+@media (max-width: 900px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .heading { grid-template-columns: 1fr; }
+  .repo { grid-template-columns: 1fr auto; }
+  .repo span { grid-column: 1 / -1; grid-row: 2; }
+}
+
+@media (max-width: 600px) {
+  .hero { padding: 72px 0 52px; }
+  .stats, .achievements { grid-template-columns: 1fr; }
+  .stat { min-height: 150px; }
+  .section { padding: 82px 0; }
+  .chartFrame, .trophyFrame { padding: 18px; }
+  .repo { padding: 22px; }
+}
