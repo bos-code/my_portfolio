@@ -5,6 +5,7 @@ export type Project = {
   category: string;
   stack: string[];
   year: string;
+  status?: "Live" | "Completed" | "In development" | "Prototype";
   role: string;
   challenge: string;
   solution: string;
@@ -23,6 +24,7 @@ export const projects: Project[] = [
     category: "Education platform",
     stack: ["Next.js", "TypeScript", "Firebase", "TanStack Query"],
     year: "2026",
+    status: "In development",
     role: "Frontend architecture, product UI and workflow design",
     challenge: "Build a large school platform that supports students, teachers and administrators without making complex academic workflows feel heavy.",
     solution: "Structured the product around role-aware journeys, reusable data patterns, cached queries and focused administration tools for students, classes, subjects, questions and performance.",
@@ -37,6 +39,7 @@ export const projects: Project[] = [
     category: "Booking platform",
     stack: ["React", "Firebase", "PWA", "Admin dashboard"],
     year: "2026",
+    status: "Live",
     role: "Frontend development and product workflow implementation",
     challenge: "Create a premium customer-facing spa experience while giving the business practical control over bookings, schedules, services, testimonials and content.",
     solution: "Built a responsive booking flow and a separate administrative environment with schedule visibility, status management, staff assignment and Firebase-backed content controls.",
@@ -52,6 +55,7 @@ export const projects: Project[] = [
     category: "Interface engineering",
     stack: ["React", "TypeScript", "Responsive UI", "PWA"],
     year: "2026",
+    status: "Completed",
     role: "Precision frontend implementation and responsive QA",
     challenge: "Reproduce a mobile ticket interface accurately across multiple iPhone sizes while preserving edge-to-edge visual behaviour and precise spacing.",
     solution: "Created a responsive sizing system, tuned typography and icon geometry, and repeatedly validated the interface against reference screenshots at device-specific dimensions.",
@@ -66,6 +70,7 @@ export const projects: Project[] = [
     category: "Hospitality product",
     stack: ["Next.js", "TypeScript", "Node.js", "Admin"],
     year: "2026",
+    status: "In development",
     role: "Product design direction, frontend architecture and backend planning",
     challenge: "Move a restaurant website away from a generic template look and create a richer product environment that can support content, operations and future ordering workflows.",
     solution: "Defined a more editorial frontend direction and separated the customer website, backend and administration concerns so the product can grow without becoming structurally tangled.",
@@ -74,12 +79,28 @@ export const projects: Project[] = [
     privateRepo: true
   },
   {
+    slug: "finance-tracker",
+    title: "Finance Tracker",
+    summary: "A mobile-first personal finance product for budgeting, offline transaction capture, savings goals, monthly analytics and secure profile-level controls.",
+    category: "Personal finance product",
+    stack: ["Expo", "React Native", "TypeScript", "Supabase", "TanStack Query", "Zustand"],
+    year: "2026",
+    status: "In development",
+    role: "Mobile product engineering, offline architecture and security workflows",
+    challenge: "Build a serious personal finance application that remains useful with unreliable connectivity while keeping money records, goals, preferences and account access secure.",
+    solution: "Structured the app around authenticated Supabase data, React Query caching, an offline transaction queue with automatic reconciliation, savings-goal workflows, monthly analytics and optional PIN or biometric app locking.",
+    highlights: ["Offline transaction queue and sync", "Revenue and expenditure tracking", "Savings and purchase goals", "PIN and biometric app lock", "Monthly analytics and category breakdowns"],
+    featured: true,
+    repoUrl: "https://github.com/bos-code/finance_tracker"
+  },
+  {
     slug: "chinel-media",
     title: "Chinel Media",
     summary: "A modern agency website focused on brand strategy, market execution, sales growth and digital product delivery.",
     category: "Agency website",
     stack: ["Next.js", "GSAP", "TypeScript"],
     year: "2026",
+    status: "In development",
     role: "Frontend development and motion direction",
     challenge: "Present a broad agency offer without making the site feel like a standard marketing template.",
     solution: "Used strong messaging hierarchy, motion-led storytelling and modular sections to connect brand, market, sales and digital product services.",
@@ -92,7 +113,8 @@ export const projects: Project[] = [
     summary: "A role-based publishing system with rich-text editing, content administration, categories and Firebase-backed workflows.",
     category: "Content platform",
     stack: ["React", "Firebase", "TipTap", "Tailwind CSS"],
-    year: "2025",
+    year: "2025—2026",
+    status: "In development",
     role: "Frontend development and Firebase integration",
     challenge: "Create a practical publishing workflow with distinct permissions, rich content editing and manageable administration.",
     solution: "Implemented a TipTap editor, role-aware dashboard, content categories and Firebase-backed authentication and storage workflows.",
@@ -106,6 +128,7 @@ export const projects: Project[] = [
     category: "Entertainment",
     stack: ["React", "TMDB", "Responsive UI"],
     year: "2025",
+    status: "Completed",
     role: "Frontend development",
     challenge: "Organize a large media catalogue into a browsing experience that remains clear across screen sizes.",
     solution: "Built reusable media sections, responsive browsing patterns and API-driven content presentation using TMDB data.",
@@ -119,24 +142,12 @@ export const projects: Project[] = [
     category: "Education",
     stack: ["React", "JavaScript"],
     year: "2025",
+    status: "Prototype",
     role: "Frontend development",
     challenge: "Make assessment flows simple enough for students while preserving useful scoring and question navigation.",
     solution: "Created a focused quiz interface with clear progression, answer handling and result presentation.",
     highlights: ["Question progression", "Score handling", "Student-first UX", "Responsive interface"],
     repoUrl: "https://github.com/bos-code/lasuQuiz"
-  },
-  {
-    slug: "finance-tracker",
-    title: "Finance Tracker",
-    summary: "A practical personal-finance interface for recording and reviewing financial activity.",
-    category: "Fintech UI",
-    stack: ["React", "JavaScript"],
-    year: "2025",
-    role: "Frontend development",
-    challenge: "Present everyday financial records clearly without overwhelming the user.",
-    solution: "Used a straightforward dashboard structure for adding, reviewing and understanding financial activity.",
-    highlights: ["Transaction tracking", "Dashboard layout", "Clear data hierarchy", "Responsive UI"],
-    repoUrl: "https://github.com/bos-code/finance_tracker"
   },
   {
     slug: "banquee",
@@ -145,6 +156,7 @@ export const projects: Project[] = [
     category: "Fintech concept",
     stack: ["React", "CSS"],
     year: "2024",
+    status: "Completed",
     role: "Frontend implementation",
     challenge: "Translate a polished banking concept into reusable responsive sections.",
     solution: "Built the interface with component-based React architecture and carefully controlled layout behaviour.",
@@ -158,6 +170,7 @@ export const projects: Project[] = [
     category: "E-commerce",
     stack: ["React", "JavaScript"],
     year: "2024",
+    status: "Prototype",
     role: "Frontend implementation",
     challenge: "Create a clean product-browsing experience for a growing catalogue of gadgets.",
     solution: "Built reusable product sections and a responsive storefront structure focused on clear discovery.",
@@ -171,6 +184,7 @@ export const projects: Project[] = [
     category: "Experiments",
     stack: ["React", "Vue", "JavaScript", "CSS"],
     year: "2024—2026",
+    status: "Completed",
     role: "Frontend experimentation",
     challenge: "Build breadth across interface patterns, APIs, frameworks and responsive implementation.",
     solution: "Completed a range of focused projects covering dashboards, utilities, product pages and frontend challenges.",
