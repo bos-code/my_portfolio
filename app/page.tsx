@@ -29,9 +29,9 @@ export default function Home() {
         <a className="brand" href="#top">john<span>dera</span>.</a>
         <nav className="nav-links mono" aria-label="Primary navigation">
           <a href="/work">Work</a>
-          <a href="#capabilities">Capabilities</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+          <a href="/github">GitHub</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
         </nav>
         <div className="status mono"><span className="status-dot" /><span>Available for opportunities</span></div>
       </header>
@@ -127,6 +127,9 @@ export default function Home() {
               <p>I work across product-facing and business-facing environments, translating requirements into clean architecture, reusable components and strong responsive experiences.</p>
               <p>Core tools include React, Next.js, Vue, JavaScript, TypeScript, React Native, Firebase, Supabase, Zustand, TanStack Query, GSAP and Framer Motion.</p>
             </div>
+            <div className="hero-actions">
+              <a className="button secondary" href="/about">Read the full story <ArrowUpRight size={17} /></a>
+            </div>
           </div>
         </div>
       </section>
@@ -137,7 +140,7 @@ export default function Home() {
           <h2>Let’s build<br/><span>something sharp.</span></h2>
           <div className="contact-bottom">
             <p>Open to frontend engineering roles, product collaborations and technically ambitious web projects.</p>
-            <a className="button" href="mailto:chidera9713@gmail.com">chidera9713@gmail.com <ArrowUpRight size={17}/></a>
+            <a className="button" href="/contact">Open contact page <ArrowUpRight size={17}/></a>
           </div>
         </div>
       </section>
