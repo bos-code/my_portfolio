@@ -1,0 +1,50 @@
+.case-study { min-height: 100vh; }
+.case-nav { min-height: 86px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+.back-link { display: inline-flex; align-items: center; gap: 9px; }
+.case-hero { padding: 100px 0 72px; }
+.case-hero h1 { margin: 18px 0 56px; max-width: 1200px; font-size: clamp(72px, 12vw, 184px); line-height: .8; letter-spacing: -.09em; }
+.case-intro { display: grid; grid-template-columns: 1.3fr .7fr; gap: 80px; border-top: 1px solid var(--line); padding-top: 30px; }
+.case-intro > p { margin: 0; max-width: 760px; color: var(--muted); font-size: clamp(20px, 2vw, 30px); line-height: 1.55; }
+.case-intro div p { color: var(--text); line-height: 1.65; }
+.case-visual { min-height: min(70vw, 820px); display: flex; align-items: end; padding: 36px; position: relative; overflow: hidden; border: 1px solid var(--line); background: #0e0e0e; }
+.case-visual::before { content: ''; position: absolute; width: 70%; aspect-ratio: 1; left: 20%; top: -5%; border: 1px solid rgba(255,255,255,.16); transform: rotate(-13deg); background: linear-gradient(145deg, rgba(238,58,67,.45), rgba(90,121,255,.28)); filter: saturate(.9); box-shadow: 0 0 160px rgba(90,121,255,.14); }
+.case-visual::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg,var(--line) 1px,transparent 1px); background-size: 72px 72px; mask-image: linear-gradient(to bottom, #000, transparent 72%); opacity: .22; }
+.case-visual span { position: relative; z-index: 2; font-size: 11px; color: var(--muted); }
+.case-details { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 120px; border: 1px solid var(--line); background: var(--line); }
+.case-details article { padding: clamp(30px, 5vw, 72px); background: var(--panel); }
+.case-details h2, .case-highlights h2 { margin: 30px 0 24px; font-size: clamp(38px, 5vw, 72px); line-height: .95; letter-spacing: -.06em; }
+.case-details p { color: var(--muted); font-size: 17px; line-height: 1.8; }
+.case-highlights { display: grid; grid-template-columns: .8fr 1.2fr; gap: 80px; padding-top: 130px; padding-bottom: 130px; }
+.case-highlights ol { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.case-highlights li { display: grid; grid-template-columns: 64px 1fr; gap: 20px; align-items: center; min-height: 104px; border-bottom: 1px solid var(--line); }
+.case-highlights li span { color: var(--muted); font-size: 11px; }
+.case-highlights li strong { font-size: clamp(20px, 2.5vw, 34px); letter-spacing: -.04em; }
+.case-footer { display: flex; justify-content: space-between; align-items: end; gap: 40px; padding-top: 52px; padding-bottom: 90px; border-top: 1px solid var(--line); }
+.case-footer .tags { margin-top: 0; }
+.private-note { display: inline-flex; align-items: center; gap: 8px; }
+.featured-card h3 a, .featured-visual { transition: opacity .2s ease, transform .35s ease; }
+.featured-card h3 a:hover { opacity: .65; }
+.featured-visual:hover { transform: scale(.995); }
+.text-link { display: inline-flex; align-items: center; gap: 7px; }
+.button, .text-link, .nav-links a, .back-link { transition: opacity .2s ease, background .2s ease, color .2s ease; }
+.button:hover { opacity: .78; }
+
+@media (max-width: 900px) {
+  .case-intro, .case-details, .case-highlights { grid-template-columns: 1fr; }
+  .case-intro, .case-highlights { gap: 42px; }
+  .case-details { margin-top: 72px; }
+  .case-footer { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 600px) {
+  .case-nav { min-height: 72px; }
+  .back-link { font-size: 9px; }
+  .case-hero { padding: 70px 0 46px; }
+  .case-hero h1 { margin-bottom: 40px; font-size: clamp(58px, 20vw, 96px); }
+  .case-intro { gap: 30px; }
+  .case-visual { min-height: 440px; padding: 20px; }
+  .case-details article { padding: 28px 22px; }
+  .case-highlights { padding-top: 88px; padding-bottom: 88px; }
+  .case-highlights li { grid-template-columns: 42px 1fr; min-height: 88px; }
+  .case-footer { padding-bottom: 64px; }
+}
