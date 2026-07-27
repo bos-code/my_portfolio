@@ -15,8 +15,9 @@ export default function WorkPage() {
         <nav className="nav-links mono" aria-label="Portfolio navigation">
           <a href="/">Home</a>
           <a href="/work">Work</a>
-          <a href="/#about">About</a>
-          <a href="/#contact">Contact</a>
+          <a href="/github">GitHub</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
         </nav>
         <div className="status mono"><span className="status-dot" /><span>Available for opportunities</span></div>
       </header>
