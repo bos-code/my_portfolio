@@ -1,8 +1,12 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import './case-study.css';
 
 export const metadata: Metadata = {
-  title: 'JohnDera — Frontend Engineer',
+  title: {
+    default: 'JohnDera — Frontend Engineer',
+    template: '%s'
+  },
   description: 'Frontend engineer building thoughtful, responsive and technically ambitious digital products.',
   metadataBase: new URL('https://github.com/bos-code'),
   openGraph: {
