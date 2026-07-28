@@ -56,7 +56,18 @@ export default async function ProjectPage({ params }: PageProps) {
       </section>
 
       <div className="shell">
-        <DeviceShowcase title={project.title} />
+        {project.titleOnlyVisual ? (
+          <div className="device-showcase title-only-visual">
+            <h2>Ticketmaster</h2>
+          </div>
+        ) : (
+          <DeviceShowcase
+            title={project.title}
+            desktop={project.showcase?.desktop}
+            tablet={project.showcase?.tablet}
+            mobile={project.showcase?.mobile}
+          />
+        )}
       </div>
 
       <section className="shell case-details">

@@ -37,7 +37,21 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
           )}
         </div>
       </div>
-      <a className="featured-visual" href={`/work/${project.slug}`} data-index={String(index + 1).padStart(2, '0')} aria-label={`Read ${project.title} case study`} />
+      <a
+        className={`featured-visual${project.showcase?.card ? ' has-image' : ''}`}
+        href={`/work/${project.slug}`}
+        data-index={String(index + 1).padStart(2, '0')}
+        aria-label={`Read ${project.title} case study`}
+      >
+        {project.showcase?.card && (
+          <img
+            className="featured-visual-image"
+            src={project.showcase.card}
+            alt=""
+            loading="lazy"
+          />
+        )}
+      </a>
     </article>
   );
 }

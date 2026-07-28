@@ -14,6 +14,16 @@ export type Project = {
   privateRepo?: boolean;
   repoUrl?: string;
   liveUrl?: string;
+  /** Show only the project name in the visual area instead of device mockups. */
+  titleOnlyVisual?: boolean;
+  /** Real interface captures for the device showcase, when available. */
+  showcase?: {
+    desktop?: string;
+    tablet?: string;
+    mobile?: string;
+    /** Wide crop used for the homepage/featured project card thumbnail. */
+    card?: string;
+  };
 };
 
 export const projects: Project[] = [
@@ -46,7 +56,13 @@ export const projects: Project[] = [
     highlights: ["Booking request flow", "Daily and weekly scheduling", "Admin-managed content", "Responsive testimonial system"],
     featured: true,
     privateRepo: true,
-    liveUrl: "https://sap-rosy-delta.vercel.app/"
+    liveUrl: "https://sap-rosy-delta.vercel.app/",
+    showcase: {
+      desktop: "/projects/veloria-essence/desktop.webp",
+      tablet: "/projects/veloria-essence/tablet.webp",
+      mobile: "/projects/veloria-essence/mobile.webp",
+      card: "/projects/veloria-essence/card.webp"
+    }
   },
   {
     slug: "ticketmaster-zik",
@@ -62,7 +78,8 @@ export const projects: Project[] = [
     highlights: ["Pixel-accurate implementation", "iPhone X–17 responsiveness", "PWA edge-to-edge layout", "Detailed icon and spacing QA"],
     featured: true,
     privateRepo: true,
-    liveUrl: "https://ticketmaster-zik-t3f6-git-agent-refer-2385f9-bos-codes-projects.vercel.app"
+    liveUrl: "https://ticketmaster-zik-t3f6-git-agent-refer-2385f9-bos-codes-projects.vercel.app",
+    titleOnlyVisual: true
   },
   {
     slug: "yakoyo-kitchen",
@@ -107,7 +124,13 @@ export const projects: Project[] = [
     solution: "Used strong messaging hierarchy, motion-led storytelling and modular sections to connect brand, market, sales and digital product services.",
     highlights: ["Motion-led hero", "Service storytelling", "Responsive layouts", "Modular content sections"],
     privateRepo: true,
-    liveUrl: "https://chinel-media-git-claude-new-session-uzb0gs-bos-codes-projects.vercel.app"
+    liveUrl: "https://chinel-media-git-claude-new-session-uzb0gs-bos-codes-projects.vercel.app",
+    showcase: {
+      desktop: "/projects/chinel-media/desktop.webp",
+      tablet: "/projects/chinel-media/tablet.webp",
+      mobile: "/projects/chinel-media/mobile.webp",
+      card: "/projects/chinel-media/card.webp"
+    }
   },
   {
     slug: "cms-blogger",
@@ -149,7 +172,13 @@ export const projects: Project[] = [
     challenge: "Make assessment flows simple enough for students while preserving useful scoring and question navigation.",
     solution: "Created a focused quiz interface with clear progression, answer handling and result presentation.",
     highlights: ["Question progression", "Score handling", "Student-first UX", "Responsive interface"],
-    repoUrl: "https://github.com/bos-code/lasuQuiz"
+    repoUrl: "https://github.com/bos-code/lasuQuiz",
+    showcase: {
+      desktop: "/projects/lasu-quiz/desktop.webp",
+      tablet: "/projects/lasu-quiz/tablet.webp",
+      mobile: "/projects/lasu-quiz/mobile.webp",
+      card: "/projects/lasu-quiz/card.webp"
+    }
   },
   {
     slug: "banquee",
@@ -163,7 +192,13 @@ export const projects: Project[] = [
     challenge: "Translate a polished banking concept into reusable responsive sections.",
     solution: "Built the interface with component-based React architecture and carefully controlled layout behaviour.",
     highlights: ["Component composition", "Responsive banking UI", "Marketing sections", "Visual polish"],
-    repoUrl: "https://github.com/bos-code/Banquee"
+    repoUrl: "https://github.com/bos-code/Banquee",
+    showcase: {
+      desktop: "/projects/banquee/desktop.webp",
+      tablet: "/projects/banquee/tablet.webp",
+      mobile: "/projects/banquee/mobile.webp",
+      card: "/projects/banquee/card.webp"
+    }
   },
   {
     slug: "zik-gadget-store",
@@ -177,7 +212,11 @@ export const projects: Project[] = [
     challenge: "Create a clean product-browsing experience for a growing catalogue of gadgets.",
     solution: "Built reusable product sections and a responsive storefront structure focused on clear discovery.",
     highlights: ["Product catalogue", "Reusable item cards", "Responsive storefront", "Commerce UI"],
-    repoUrl: "https://github.com/bos-code/Zik-gadget-store"
+    repoUrl: "https://github.com/bos-code/Zik-gadget-store",
+    showcase: {
+      desktop: "/projects/zik-gadget-store/desktop.webp",
+      card: "/projects/zik-gadget-store/card.webp"
+    }
   },
   {
     slug: "project-archive",
