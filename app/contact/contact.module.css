@@ -22,3 +22,40 @@
   .options { margin-top: 56px; }
   .option { min-height: 220px; }
 }
+
+.formSection { display: grid; grid-template-columns: 1.1fr .9fr; gap: 1px; margin-top: 1px; background: var(--line); border-top: 1px solid var(--line); }
+.formPanel { padding: clamp(28px, 4vw, 52px); background: var(--panel); }
+.formPanel h2 { margin: 14px 0 28px; font-size: clamp(30px, 4vw, 48px); line-height: 1; letter-spacing: -.055em; }
+
+.form { display: flex; flex-direction: column; gap: 22px; }
+.field { display: flex; flex-direction: column; gap: 10px; }
+.field input, .field textarea {
+  background: var(--panel-soft);
+  border: 1px solid var(--line);
+  color: var(--text);
+  padding: 14px 16px;
+  resize: vertical;
+}
+.field input:focus, .field textarea:focus { outline: none; border-color: var(--blue); }
+.honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.formError { color: var(--red); font-size: 13px; }
+.formStatus { display: flex; flex-direction: column; gap: 10px; max-width: 460px; }
+.formStatus p { color: var(--muted); line-height: 1.6; }
+
+.quickPanel { padding: clamp(28px, 4vw, 52px); background: var(--panel-soft); display: flex; flex-direction: column; gap: 18px; }
+.quickLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+.quickLink strong { font-size: 18px; letter-spacing: -.03em; }
+.quickLink svg { color: var(--muted); }
+.quickNote { color: var(--muted); font-size: 13px; line-height: 1.6; }
+
+@media (max-width: 900px) {
+  .formSection { grid-template-columns: 1fr; }
+}

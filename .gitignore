@@ -12,6 +12,16 @@ dist
 dist-ssr
 *.local
 
+# Next.js build output
+.next
+out
+tsconfig.tsbuildinfo
+
+# env files (may contain SMTP/API secrets)
+.env
+.env*.local
+!.env.example
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

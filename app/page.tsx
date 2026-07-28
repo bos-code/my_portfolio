@@ -1,6 +1,7 @@
 import { ArrowDownRight, ArrowUpRight, Code2, Layers3, MoveUpRight, Sparkles } from 'lucide-react';
 import { MobileMenu } from '@/components/MobileMenu';
 import { ProjectCard } from '@/components/ProjectCard';
+import { Testimonials } from '@/components/Testimonials';
 import { featuredProjects, projects } from '@/data/projects';
 
 const capabilities = [
@@ -32,6 +33,7 @@ export default function Home() {
           <a href="/work">Work</a>
           <a href="/github">GitHub</a>
           <a href="/about">About</a>
+          <a href="#reviews">Reviews</a>
           <a href="/contact">Contact</a>
         </nav>
         <div className="status mono"><span className="status-dot" /><span>Available for opportunities</span></div>
@@ -135,6 +137,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Testimonials />
 
       <section className="section contact" id="contact">
         <div className="shell">

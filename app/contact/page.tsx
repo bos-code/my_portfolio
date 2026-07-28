@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
-import { ArrowUpRight, Mail, MapPin } from 'lucide-react';
+import { ArrowUpRight, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
 import { MobileMenu } from '@/components/MobileMenu';
+import { ContactForm } from '@/components/ContactForm';
 import styles from './contact.module.css';
 
 export const metadata: Metadata = {
@@ -9,6 +10,9 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const phone = process.env.CONTACT_PHONE_NUMBER;
+  const whatsappNumber = phone?.replace(/[^\d]/g, '');
+
   return (
     <main className={styles.page}>
       <header className="shell nav">
@@ -41,6 +45,44 @@ export default function ContactPage() {
             <strong>github.com/bos-code</strong>
             <div className={styles.optionFooter}><span>Review public code</span><ArrowUpRight size={23} /></div>
           </a>
+        </div>
+      </section>
+
+      <section className={`shell ${styles.formSection}`}>
+        <div className={styles.formPanel}>
+          <span className="mono eyebrow">Send a message</span>
+          <h2>I read every message myself.</h2>
+          <ContactForm />
+        </div>
+        <div className={styles.quickPanel}>
+          <span className="mono eyebrow">Other ways to reach me</span>
+          {phone ? (
+            <>
+              <a className={styles.quickLink} href={`tel:${phone}`}>
+                <div>
+                  <span className="mono eyebrow">Call or text</span>
+                  <strong>{phone}</strong>
+                </div>
+                <Phone size={22} />
+              </a>
+              <a
+                className={styles.quickLink}
+                href={`https://wa.me/${whatsappNumber}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <div>
+                  <span className="mono eyebrow">WhatsApp</span>
+                  <strong>Message me</strong>
+                </div>
+                <MessageCircle size={22} />
+              </a>
+            </>
+          ) : (
+            <p className={styles.quickNote}>
+              Phone and WhatsApp are available on request — send a message above and I’ll share them.
+            </p>
+          )}
         </div>
       </section>
 
