@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { ArrowUpRight, Mail, MapPin } from 'lucide-react';
+import { MobileMenu } from '@/components/MobileMenu';
 import styles from './contact.module.css';
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export default function ContactPage() {
           <a href="/about">About</a>
         </nav>
         <div className="status mono"><span className="status-dot" /><span>Available for opportunities</span></div>
+        <MobileMenu />
       </header>
 
       <section className={`shell ${styles.hero}`}>
