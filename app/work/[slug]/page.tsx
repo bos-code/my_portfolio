@@ -56,7 +56,7 @@ export default async function ProjectPage({ params }: PageProps) {
       </section>
 
       <div className="shell">
-        <DeviceShowcase title={project.title} />
+        <DeviceShowcase title={project.title} liveUrl={project.liveUrl} />
       </div>
 
       <section className="shell case-details">
