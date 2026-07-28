@@ -87,6 +87,11 @@ button, input, textarea { font: inherit; }
 .featured-visual { min-height: 470px; position: relative; background: #0d0d0d; overflow: hidden; }
 .featured-visual::before { content: ''; position: absolute; width: 64%; aspect-ratio: 1; border: 1px solid rgba(255,255,255,.17); transform: rotate(18deg); top: 8%; left: 18%; background: linear-gradient(135deg, rgba(238,58,67,.3), rgba(90,121,255,.28)); box-shadow: 0 0 90px rgba(90,121,255,.12); }
 .featured-visual::after { content: attr(data-index); position: absolute; right: 24px; bottom: 8px; font-size: 150px; line-height: 1; color: rgba(255,255,255,.05); font-weight: 800; letter-spacing: -.1em; }
+.featured-visual.has-live-preview::before, .featured-visual.has-live-preview::after { display: none; }
+.featured-live-preview { position: absolute; inset: 0; overflow: hidden; background: #fff; }
+.featured-live-preview iframe { width: 1440px; height: 900px; display: block; border: 0; transform: scale(.55); transform-origin: top left; pointer-events: none; background: #fff; }
+.featured-visual-link { position: absolute; inset: 0; z-index: 3; }
+.featured-preview-label { position: absolute; left: 18px; bottom: 18px; z-index: 4; padding: 8px 10px; border: 1px solid rgba(255,255,255,.22); border-radius: 999px; color: #fff; background: rgba(0,0,0,.74); backdrop-filter: blur(12px); font-size: 9px; pointer-events: none; }
 
 .capabilities { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .capability { padding: 36px; min-height: 270px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -130,6 +135,7 @@ button, input, textarea { font: inherit; }
   .capabilities, .work-grid { grid-template-columns: 1fr; }
   .about-meta { grid-template-columns: 1fr; }
   .featured-card { min-height: auto; }
+  .featured-live-preview iframe { transform: scale(.6); }
   .archive td:nth-child(2) { display: none; }
 }
 
@@ -145,6 +151,8 @@ button, input, textarea { font: inherit; }
   .featured-info { padding: 25px; }
   .project-meta-row { align-items: flex-start; }
   .featured-visual { min-height: 320px; }
+  .featured-live-preview iframe { transform: scale(.35); }
+  .featured-preview-label { left: 12px; bottom: 12px; font-size: 8px; }
   .archive td { padding: 18px 4px; }
   .archive td:first-child { width: 60%; }
   .archive td:nth-child(3) { display: none; }
