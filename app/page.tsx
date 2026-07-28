@@ -1,4 +1,5 @@
 import { ArrowDownRight, ArrowUpRight, Code2, Layers3, MoveUpRight, Sparkles } from 'lucide-react';
+import { MobileMenu } from '@/components/MobileMenu';
 import { ProjectCard } from '@/components/ProjectCard';
 import { featuredProjects, projects } from '@/data/projects';
 
@@ -34,6 +35,7 @@ export default function Home() {
           <a href="/contact">Contact</a>
         </nav>
         <div className="status mono"><span className="status-dot" /><span>Available for opportunities</span></div>
+        <MobileMenu />
       </header>
 
       <section className="shell hero" id="top">
