@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { ArrowUpRight } from 'lucide-react';
+import { MobileMenu } from '@/components/MobileMenu';
 import styles from './about.module.css';
 
 export const metadata: Metadata = {
@@ -54,6 +55,7 @@ export default function AboutPage() {
           <a href="/about">About</a>
         </nav>
         <a className="text-link" href="mailto:chidera9713@gmail.com">Contact <ArrowUpRight size={14} /></a>
+        <MobileMenu />
       </header>
 
       <section className={`shell ${styles.hero}`}>
