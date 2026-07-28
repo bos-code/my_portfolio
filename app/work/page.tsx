@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { ArrowUpRight } from 'lucide-react';
+import { MobileMenu } from '@/components/MobileMenu';
 import { projects } from '@/data/projects';
 
 export const metadata: Metadata = {
@@ -20,6 +21,7 @@ export default function WorkPage() {
           <a href="/contact">Contact</a>
         </nav>
         <div className="status mono"><span className="status-dot" /><span>Available for opportunities</span></div>
+        <MobileMenu />
       </header>
 
       <section className="shell page-hero">
