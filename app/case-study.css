@@ -25,11 +25,17 @@
 .device-laptop { width: 68%; left: 4%; top: 15%; }
 .device-tablet { width: 25%; right: 14%; top: 8%; border: 8px solid #202020; border-radius: 24px; padding: 5px; background: #050505; }
 .device-phone { width: 15%; right: 3.5%; bottom: 7%; border: 7px solid #202020; border-radius: 34px; padding: 5px; background: #050505; z-index: 3; }
-.device-screen { width: 100%; overflow: hidden; background: #090909; border: 1px solid rgba(255,255,255,.12); }
+.device-screen { width: 100%; position: relative; overflow: hidden; background: #090909; border: 1px solid rgba(255,255,255,.12); }
 .device-laptop .device-screen { aspect-ratio: 16 / 10; border: 10px solid #202020; border-radius: 18px 18px 8px 8px; }
 .device-tablet .device-screen { aspect-ratio: 3 / 4; border-radius: 14px; }
 .device-phone .device-screen { aspect-ratio: 9 / 19.5; border-radius: 25px; }
 .device-screen img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: top; }
+.device-live-preview { width: 100%; height: 100%; position: relative; overflow: hidden; background: #fff; }
+.device-live-preview iframe { display: block; border: 0; transform-origin: top left; pointer-events: none; background: #fff; }
+.device-live-desktop iframe { width: 1440px; height: 900px; transform: scale(.67); }
+.device-live-tablet iframe { width: 1024px; height: 1366px; transform: scale(.326); }
+.device-live-mobile iframe { width: 390px; height: 844px; transform: scale(.492); }
+.device-preview-badge { position: absolute; left: 10px; bottom: 10px; z-index: 5; padding: 7px 9px; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; color: #fff; background: rgba(0,0,0,.72); backdrop-filter: blur(10px); font-size: 8px; }
 .device-camera { position: absolute; left: 50%; top: 4px; transform: translateX(-50%); width: 5px; height: 5px; border-radius: 50%; background: #050505; z-index: 4; }
 .device-laptop .device-camera { top: 5px; }
 .device-laptop-base { width: 112%; height: 15px; margin-left: -6%; border-radius: 2px 2px 18px 18px; background: linear-gradient(180deg, #363636, #171717); }
@@ -71,6 +77,9 @@
   .device-laptop { width: 86%; left: 4%; top: 8%; }
   .device-tablet { width: 34%; right: 6%; top: 47%; }
   .device-phone { width: 21%; right: 42%; bottom: 4%; }
+  .device-live-desktop iframe { transform: scale(.5); }
+  .device-live-tablet iframe { transform: scale(.264); }
+  .device-live-mobile iframe { transform: scale(.403); }
   .case-details { margin-top: 72px; }
   .case-footer { flex-direction: column; align-items: flex-start; }
 }
@@ -86,6 +95,10 @@
   .device-laptop, .device-tablet, .device-phone { position: relative; inset: auto; width: 100%; filter: none; }
   .device-tablet { width: 72%; justify-self: end; }
   .device-phone { width: 42%; justify-self: start; }
+  .device-live-desktop iframe { transform: scale(.356); }
+  .device-live-tablet iframe { transform: scale(.352); }
+  .device-live-mobile iframe { transform: scale(.51); }
+  .device-preview-badge { left: 7px; bottom: 7px; font-size: 7px; }
   .device-placeholder strong { max-width: 100%; }
   .case-details article { padding: 28px 22px; }
   .case-highlights { padding-top: 88px; padding-bottom: 88px; }
