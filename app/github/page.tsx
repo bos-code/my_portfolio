@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { ArrowUpRight } from 'lucide-react';
+import { MobileMenu } from '@/components/MobileMenu';
 import styles from './github.module.css';
 
 export const metadata: Metadata = {
@@ -43,9 +44,10 @@ export default function GitHubPage() {
           <a href="/">Home</a>
           <a href="/work">Work</a>
           <a href="/github">GitHub</a>
-          <a href="/#contact">Contact</a>
+          <a href="/contact">Contact</a>
         </nav>
         <a className="text-link" href="https://github.com/bos-code" target="_blank" rel="noreferrer">Open profile <ArrowUpRight size={14} /></a>
+        <MobileMenu />
       </header>
 
       <section className={`shell ${styles.hero}`}>
