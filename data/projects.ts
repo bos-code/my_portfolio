@@ -61,7 +61,8 @@ export const projects: Project[] = [
     solution: "Created a responsive sizing system, tuned typography and icon geometry, and repeatedly validated the interface against reference screenshots at device-specific dimensions.",
     highlights: ["Pixel-accurate implementation", "iPhone X–17 responsiveness", "PWA edge-to-edge layout", "Detailed icon and spacing QA"],
     featured: true,
-    privateRepo: true
+    privateRepo: true,
+    liveUrl: "https://ticketmaster-zik-t3f6-git-agent-refer-2385f9-bos-codes-projects.vercel.app"
   },
   {
     slug: "yakoyo-kitchen",
@@ -105,7 +106,8 @@ export const projects: Project[] = [
     challenge: "Present a broad agency offer without making the site feel like a standard marketing template.",
     solution: "Used strong messaging hierarchy, motion-led storytelling and modular sections to connect brand, market, sales and digital product services.",
     highlights: ["Motion-led hero", "Service storytelling", "Responsive layouts", "Modular content sections"],
-    privateRepo: true
+    privateRepo: true,
+    liveUrl: "https://chinel-media-git-claude-new-session-uzb0gs-bos-codes-projects.vercel.app"
   },
   {
     slug: "cms-blogger",
