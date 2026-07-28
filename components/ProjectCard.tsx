@@ -2,12 +2,14 @@ import { ArrowUpRight, LockKeyhole } from 'lucide-react';
 import type { Project } from '@/data/projects';
 
 export function ProjectCard({ project, index }: { project: Project; index: number }) {
+  const projectIndex = String(index + 1).padStart(2, '0');
+
   return (
     <article className="featured-card">
       <div className="featured-info">
         <div>
           <div className="project-meta-row">
-            <div className="mono eyebrow">{String(index + 1).padStart(2, '0')} / {project.category}</div>
+            <div className="mono eyebrow">{projectIndex} / {project.category}</div>
             {project.status && <span className="project-status mono">{project.status}</span>}
           </div>
           <h3><a href={`/work/${project.slug}`}>{project.title}</a></h3>
@@ -37,7 +39,23 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
           )}
         </div>
       </div>
-      <a className="featured-visual" href={`/work/${project.slug}`} data-index={String(index + 1).padStart(2, '0')} aria-label={`Read ${project.title} case study`} />
+
+      <div className={`featured-visual${project.liveUrl ? ' has-live-preview' : ''}`} data-index={projectIndex}>
+        {project.liveUrl && (
+          <div className="featured-live-preview" aria-label={`${project.title} live interface preview`}>
+            <iframe
+              src={project.liveUrl}
+              title={`${project.title} live interface preview`}
+              loading="lazy"
+              sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              referrerPolicy="no-referrer"
+              tabIndex={-1}
+            />
+          </div>
+        )}
+        {project.liveUrl && <span className="featured-preview-label mono">Live interface</span>}
+        <a className="featured-visual-link" href={`/work/${project.slug}`} aria-label={`Read ${project.title} case study`} />
+      </div>
     </article>
   );
 }
